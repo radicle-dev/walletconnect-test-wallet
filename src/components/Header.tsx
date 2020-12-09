@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 import Blockie from "./Blockie";
-import { ellipseAddress, getChainData } from "../helpers/utilities";
+import { getChainData } from "../helpers/utilities";
 import { fonts, responsive, transitions } from "../styles";
 
 const SHeader = styled.div`
@@ -95,7 +95,7 @@ const Header = (props: IHeaderProps) => {
       {address && (
         <SActiveAccount>
           <SBlockie address={address} />
-          <SAddress connected={connected}>{ellipseAddress(address)}</SAddress>
+          <SAddress connected={connected}>{address}</SAddress>
           <SDisconnect connected={connected} onClick={killSession}>
             {"Disconnect"}
           </SDisconnect>
